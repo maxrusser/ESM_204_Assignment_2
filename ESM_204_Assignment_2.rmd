@@ -126,9 +126,9 @@ CS(high) and PS same as problem 1
 
 $1 tax
 
-CS(low): 458856.8192
-CS(high):
-PS:
+CS(low + taxrev) - EC: 1428568.14
+CS(high +taxrev): 2391386.91
+PS: 610471.1304
 
 ```{r warning=FALSE}
 #$1 tax 
@@ -154,6 +154,148 @@ tax4_1 <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)), aes(x = x, y = 
 
 tax4_1
 ```
+
+$2 tax revenue
+
+CS(low + taxrev) - EC: 619081.0932
+CS(high +taxrev): 1351670.009
+PS: 555544.606
+
+```{r warning = FALSE}
+#$2 tax 
+
+#define the functions and plot
+
+Q_low <- function(x) 21.9908534 - 0.0001355 * x
+Q_high <- function(x) 23.3914418 - 0.0001297 * x
+Q_ag <- function(x) 22.70646323 - 0.000066268 * x
+supply_tax4_2 <- function(x) 2 + x * .000018713
+mec <- function(x) 2
+
+tax4_2 <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)), aes(x = x, y = y)) +
+  stat_function(fun = Q_low, geom = "line", color = "blue") +
+  stat_function(fun = Q_high, geom = "line", color = "green") +
+  stat_function(fun = Q_ag, geom = "line", color = "black") +
+  stat_function(fun = supply_tax4_2, geom = "line", color = "brown") +
+  stat_function(fun = mec, geom = "line", color = "red") +
+  scale_x_continuous(expand = c(0,0), limits = c(0,400000)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,25)) +
+  labs(x = "Quantity (gallons)", y = "Price (dollars)") +
+  theme_light()
+
+tax4_2
+```
+
+$3 tax revenue
+
+CS(low + taxrev) - EC: 652645.1956 
+CS(high +taxrev): 1364523.649 
+PS: 503206.8958 
+
+
+```{r warning = FALSE}
+
+#$3 tax 
+
+#define the functions and plot
+
+Q_low <- function(x) 21.9908534 - 0.0001355 * x
+Q_high <- function(x) 23.3914418 - 0.0001297 * x
+Q_ag <- function(x) 22.70646323 - 0.000066268 * x
+supply_tax4_3 <- function(x) 3 + x * .000018713
+mec <- function(x) 2
+
+tax4_3 <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)), aes(x = x, y = y)) +
+  stat_function(fun = Q_low, geom = "line", color = "blue") +
+  stat_function(fun = Q_high, geom = "line", color = "green") +
+  stat_function(fun = Q_ag, geom = "line", color = "black") +
+  stat_function(fun = supply_tax4_3, geom = "line", color = "brown") +
+  stat_function(fun = mec, geom = "line", color = "red") +
+  scale_x_continuous(expand = c(0,0), limits = c(0,400000)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,25)) +
+  labs(x = "Quantity (gallons)", y = "Price (dollars)") +
+  theme_light()
+
+tax4_3
+```
+
+$4 tax revenue
+
+CS(low + taxrev) - EC: 679186.42
+CS(high +taxrev): 1370040.359  
+PS: 453457.9996
+
+```{r warning = FALSE}
+#$4 tax 
+
+#define the functions and plot
+
+Q_low <- function(x) 21.9908534 - 0.0001355 * x
+Q_high <- function(x) 23.3914418 - 0.0001297 * x
+Q_ag <- function(x) 22.70646323 - 0.000066268 * x
+supply_tax4_4 <- function(x) 4 + x * .000018713
+mec <- function(x) 2
+
+tax4_4 <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)), aes(x = x, y = y)) +
+  stat_function(fun = Q_low, geom = "line", color = "blue") +
+  stat_function(fun = Q_high, geom = "line", color = "green") +
+  stat_function(fun = Q_ag, geom = "line", color = "black") +
+  stat_function(fun = supply_tax4_4, geom = "line", color = "brown") +
+  stat_function(fun = mec, geom = "line", color = "red") +
+  scale_x_continuous(expand = c(0,0), limits = c(0,400000)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,25)) +
+  labs(x = "Quantity (gallons)", y = "Price (dollars)") +
+  theme_light()
+
+tax4_4
+
+```
+
+$5 tax revenue
+
+CS(low + taxrev) - EC: 698702.4688
+CS(high +taxrev): 1368220.137   
+PS:406297.9171
+
+```{r warning = FALSE}
+
+#$5 tax 
+
+#define the functions and plot
+
+Q_low <- function(x) 21.9908534 - 0.0001355 * x
+Q_high <- function(x) 23.3914418 - 0.0001297 * x
+Q_ag <- function(x) 22.70646323 - 0.000066268 * x
+supply_tax4_5 <- function(x) 5 + x * .000018713
+mec <- function(x) 2
+
+tax4_5 <- ggplot(data.frame(x = c(70000, 500000), y = c(0, 30)), aes(x = x, y = y)) +
+  stat_function(fun = Q_low, geom = "line", color = "blue") +
+  stat_function(fun = Q_high, geom = "line", color = "green") +
+  stat_function(fun = Q_ag, geom = "line", color = "black") +
+  stat_function(fun = supply_tax4_5, geom = "line", color = "brown") +
+  stat_function(fun = mec, geom = "line", color = "red") +
+  scale_x_continuous(expand = c(0,0), limits = c(0,400000)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,25)) +
+  labs(x = "Quantity (gallons)", y = "Price (dollars)") +
+  theme_light()
+
+tax4_5
+
+```
+
+Part 5.
+
+Gas consumption of high consumers: 161075.1103
+
+Gas consumption of low consumers: 143843.9365
+
+Gas price: 2.5
+
+environmental damage: 267194.5874
+
+Part 6.
+
 
 
 
